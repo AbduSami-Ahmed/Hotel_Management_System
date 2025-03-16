@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .notification {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dismiss-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .dismiss-btn:hover {
+            background-color: darkred;
+        }
+        .clear-btn {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .clear-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="city.html">Cities</a>
+        <a href="hotel.html">Hotels</a>
+        <a href="index.html">Rooms</a>
+        <a href="rooms.html">Record</a>
+        <a href="addrooms.html">Add Room</a>
+        <a href="checkin.html">Check-In</a>
+        <a href="booking.html">Bookings</a>
+        <a href="notification.html">Notifications</a>
+    </header>
+
+    <div class="container">
+        <h2>Notifications</h2>
+        <div id="notificationPanel"></div>
+        <button class="clear-btn" onclick="clearNotifications()">Clear All Notifications</button>
+    </div>
+
+    <script src="js/notification.js"></script>
+</body>
+</html>

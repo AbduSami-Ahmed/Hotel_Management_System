@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - غرف بركة</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Light green gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .cover-container {
+      background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      color: #2e7d32; /* Dark green text color */
+    }
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #1b5e20; /* Rich green color */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .login-container {
+      background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #2e7d32; /* Dark green text color */
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    input:focus {
+      border-color: #1b5e20; /* Rich green border on focus */
+    }
+    input::placeholder {
+      color: rgba(46, 125, 50, 0.7); /* Light green placeholder */
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1b5e20; /* Rich green button */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #2e7d32; /* Darker green on hover */
+    }
+    #error {
+      color: #d32f2f; /* Red error message */
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    <!-- <div clas="title">مرحبا</div> -->
+  <div class="cover-container">
+    <div class="title">غرف بركة</div>
+    <div class="login-container">
+      <h2 style="color: #1b5e20;">Login</h2>
+      <input type="text" id="userid" placeholder="User ID">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p id="error"></p>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const userid = document.getElementById('userid').value;
+      const password = document.getElementById('password').value;
+
+      fetch('login.json', {
+        method: 'POST',
+        body: JSON.stringify({ action: 'login', userid, password }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          localStorage.setItem('user', JSON.stringify(data.user));
+          window.location.href = 'city.html';
+        } else {
+          document.getElementById('error').innerText = data.message || 'Login failed';
+        }
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>

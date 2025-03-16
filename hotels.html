@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Selection</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .city-container {
+            position: relative;
+            top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .city-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #42d0a6;
+            color: white;
+            border-radius: 5px;
+        }
+        .city-container button:hover {
+            background-color: #07d448;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1><b>Select a City</b></h1>
+    </header>
+    
+    <div class="city-container">
+        <button onclick="openCity('Madinah')"><b>Madinah</b></button>
+        <button onclick="openCity('Makkah')"><b>Makkah</b></button>
+        <button onclick="openCity('Dammam')"><b>Dammam</b></button>
+        <button onclick="openCity('Riyadh')"><b>Riyadh</b></button>
+        <button onclick="openCity('Al-Khobar')"><b>Al-Khobar</b></button>
+    </div>
+    
+    <script>
+        function openCity(city) {
+            window.location.href = `rooms.html?city=${city}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+    { "name": "Grand", "city": "Makkah", "category": "Luxury" },
+    { "name": "Arab", "city": "Madina", "category": "Luxury"},
+    { "name": "Skyline", "city": "Dammam", "category": "Luxury" },
+    { "name": "Luxury", "city": "Riyadh", "category": "Luxury" },
+    { "name": "Hotel", "city": "Makkah", "category": "Budget" },
+    { "name": "Resort", "city": "Madina", "category": "Budget"},
+    { "name": "Suites", "city": "Dammam", "category": "Budget" },
+    { "name": "Stay", "city": "Riyadh", "category": "Budget" },
+    { "name": "Grand Hotel", "city": "Makkah", "category": "Boutique" },
+    { "name": "Arab Resort", "city": "Madina", "category": "Boutique"},
+    { "name": "Skyline Suites", "city": "Dammam", "category": "Boutique" },
+    { "name": "Luxury Stay", "city": "Riyadh", "category": "Boutique" }
+]

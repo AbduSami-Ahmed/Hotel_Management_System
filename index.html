@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- <div class="back-icon" onclick="navigateBack('hotel.html')">⬅️ Back to Hotels</div> -->
+
+    <header class="navbar">
+        <a href="city.html">Cities</a>
+        <a href="hotel.html">Hotels</a>
+        <a href="index.html">Rooms</a>
+        <a href="rooms.html">Record</a>
+        <a href="addrooms.html">Add Room</a>
+        <a href="checkin.html">Check-In</a>
+        <a href="booking.html">Bookings</a>
+        <a href="notification.html">Notifications</a>
+    </header>
+
+    <div class="container" id="rooms">
+        <h2>Hotels<span class="refresh-icon" onclick="fetchRooms()">🔄</span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Checkout</th>
+                    <th>Remaining Time</th>
+                    <th>Room Cleaning</th>
+                    <th>Feedback</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="roomTableBody">
+                <tr><td colspan="5">Loading...</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Feedback Modal -->
+<div id="feedbackModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeFeedbackModal()">&times;</span>
+        <h2>Submit Feedback</h2>
+        
+        <label for="hotelName">Hotel:</label>
+        <input type="text" id="hotelName" placeholder="Enter hotel name" required>
+        
+        <label for="roomNumber">Room:</label>
+        <input type="text" id="roomNumber" placeholder="Enter room number" readonly>
+        
+        <label for="customerID">Customer ID:</label>
+        <input type="text" id="customerID" placeholder="Enter customer ID" required>
+        
+        <label for="rating">Rating:</label>
+        <div class="rating">
+            <span onclick="setRating(1)">⭐</span>
+            <span onclick="setRating(2)">⭐</span>
+            <span onclick="setRating(3)">⭐</span>
+            <span onclick="setRating(4)">⭐</span>
+            <span onclick="setRating(5)">⭐</span>
+        </div>
+        <input type="hidden" id="ratingValue">
+        
+        <label for="feedbackText">Feedback:</label>
+        <textarea id="feedbackText" placeholder="Enter your feedback" required></textarea>
+        
+        <button onclick="submitFeedback()">Submit</button>
+    </div>
+</div>
+
+
+    </div>
+    <script src="js/navigation.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

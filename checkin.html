@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+      <a href="city.html">Cities</a>
+      <a href="hotel.html">Hotels</a>
+      <a href="index.html">Rooms</a>
+      <a href="rooms.html">Record</a>
+      <a href="addrooms.html">Add Room</a>
+      <a href="checkin.html">Check-In</a>
+      <a href="booking.html">Bookings</a>
+      <a href="notification.html">Notifications</a>
+    </header>
+
+    <div class="container">
+        <h2>Check-In</h2>       
+        <form id="checkinForm">
+            <label for="room" class="required">Room:</label>
+            <select id="room" required>
+                <option value="">Loading rooms....</option>
+              </select>
+
+              <!-- <label for="room" class="required">Room:</label>
+<select id="room" required>
+  <option value="">Loading rooms....</option>
+</select> -->
+<!-- <label for="room" class="required">Room:</label>
+<div class="required">
+  <div class="dropdown-header">
+    <span>Select a Room</span>
+    <span class="arrow">▼</span>
+  </div>
+  <ul class="dropdown-options" id="roomDropdown"></ul>
+</div> -->
+
+            <label for="name" class="required">Name:</label>
+            <input type="text" id="name" name="name" minlength="5" required>
+
+            <label for="checkin" class="required">Check-In:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout" class="required">Check-Out:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" minlength="10" maxlength="10" pattern="\d{10}">
+
+            <label for="cost">Cost (SAR):</label>
+            <input type="number" id="cost" name="cost">
+
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <button type="submit">Check-In</button>
+        </form>
+    </div>
+
+    <div class="confirmation-message" id="confirmationMessage">Check-In successful!</div>
+
+    <script src="js/checkin.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Hotel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- <div class="back-icon" onclick="navigateBack('city.html')">⬅️ Back to Cities</div> -->
+
+    <header class="navbar">
+        <a href="city.html">Cities</a>
+        <a href="hotel.html">Hotels</a>
+        <a href="index.html">Rooms</a>
+        <a href="rooms.html">Record</a>
+        <a href="addrooms.html">Add Room</a>
+        <a href="checkin.html">Check-In</a>
+        <a href="booking.html">Bookings</a>
+        <a href="notification.html">Notifications</a>
+    </header>
+
+    <div class="container">
+        <h2 id="cityTitle">Hotels</h2>
+
+        <!-- Category Filter Dropdown -->
+        <label for="hotelCategoryFilter">Filter by Category:</label>
+        <select id="hotelCategoryFilter">
+            <option value="all">All Categories</option>
+        </select>
+
+        <div id="hotelList"></div>
+
+        <button id="addRoomButton" onclick="navigateToAddRoom()">➕ Add Room</button>
+        
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/hotel.js"></script>
+
+</body>
+</html>

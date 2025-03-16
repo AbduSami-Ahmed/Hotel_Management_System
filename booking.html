@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .legend {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 15px;
+            font-weight: bold;
+        }
+        .legend span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+        .green { background-color: green; }
+        .red { background-color: red; }
+        .orange { background-color: orange; }
+
+        /* Booking Table Styles */
+        .cancel-btn {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cancel-btn:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="city.html">Cities</a>
+        <a href="hotel.html">Hotels</a>
+        <a href="index.html">Rooms</a>
+        <a href="rooms.html">Record</a>
+        <a href="addrooms.html">Add Room</a>
+        <a href="checkin.html">Check-In</a>
+        <a href="booking.html">Bookings</a>
+        <a href="notification.html">Notifications</a>
+    </header>
+
+    <div class="container">
+        <div class="filters">
+            <label>From Date: <input type="date" id="fromDate"></label>
+            <label>To Date: <input type="date" id="toDate"></label>
+            <label>Filter City:
+                <select id="cityFilter"></select>
+            </label>
+            <label>Filter Hotel:
+                <select id="hotelFilter"></select>
+            </label>
+            <label>Month:
+                <select id="monthFilter">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </label>
+            <button onclick="refreshCalendar()">Refresh</button>
+        </div>
+
+        <!-- Color Legend -->
+        <div class="legend">
+            <div><span class="green"></span> Available to Book</div>
+            <div><span class="red"></span> Booked</div>
+            <div><span class="orange"></span> Cancelled Booking</div>
+        </div>
+
+        <!-- Calendar View -->
+        <table id="calendarTable">
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <script>
+                        for (let i = 1; i <= 30; i++) {
+                            document.write(`<th>${i}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+            <tbody id="calendarBody"></tbody>
+        </table>
+
+        <!-- Bookings Table -->
+        <h2>Current Bookings</h2>
+        <table id="bookingTable">
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <th>Booking Dates</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

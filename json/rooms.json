@@ -1,0 +1,38 @@
+[
+    {
+        "roomName": "Room 101",
+        "price": 100,
+        "checkout": "2025-02-15",
+        "status": "Available"
+    },
+    {
+        "roomName": "Room 102",
+        "price": 120,
+        "checkout": "2025-02-20",
+        "status": "Filled"
+    },
+    {
+        "roomName": "Room 103",
+        "price": 150,
+        "checkout": "2025-02-25",
+        "status": "Available"
+    },
+    {
+        "roomName": "Room 104",
+        "price": 110,
+        "checkout": "2025-02-22",
+        "status": "Exit Time"
+    },
+    {
+        "roomName": "Room 105",
+        "price": 180,
+        "checkout": "2025-02-18",
+        "status": "Filled"
+    },
+    {
+        "roomName": "Room 106",
+        "price": 200,
+        "checkout": "2025-02-27",
+        "status": "Exit Time"
+    }
+]

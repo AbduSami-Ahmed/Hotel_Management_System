@@ -1,0 +1,58 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Entry</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+        <button onclick="goBackToHotels()" class="back-icon">
+            ⬅️ Back to Hotels
+        </button>
+
+    <div class="container">
+        <label>City:</label>
+        <input type="text" id="city" placeholder="Enter city">
+        <br><br>
+        <label>Hotel:</label>
+        <input type="text" id="hotel" placeholder="Enter hotel">
+        <br><br>
+        <label>Rooms:</label>
+        <div id="rooms-container"></div>
+        <button onclick="addRoom()">+ Add Room</button>
+
+        <table id="roomsTable">
+            <thead>
+                <tr>
+                    <th>Room Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="roomsTableBody">
+                <!-- Rooms will be added here -->
+            </tbody>
+        </table>
+        
+        <br><br>
+        <button onclick="getData()">Submit</button>
+        <pre id="output"></pre>
+
+        <h3>Submitted Data</h3>
+        <table border="1" style="width:100%; border-collapse: collapse; text-align: left;">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Hotel</th>
+                    <th>Rooms</th>
+                </tr>
+            </thead>
+            <tbody id="outputTableBody"></tbody>
+        </table>
+
+
+    </div>
+    <script src="js/addmultiroom.js"></script>
+</body>
+</html>

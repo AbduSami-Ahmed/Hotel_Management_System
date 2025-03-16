@@ -1,0 +1,27 @@
+[
+    {
+      "room": "101",
+      "tenant": "John Doe",
+      "contact": "1234567890",
+      "checkin": "25-Feb-2025",
+      "checkout": "28-Feb-2025",
+      "price": 150
+    },
+    {
+      "room": "102",
+      "tenant": "Alice Smith",
+      "contact": "9876543210",
+      "checkin": "26-Feb-2025",
+      "checkout": "01-Mar-2025",
+      "price": 200
+    },
+    {
+      "room": "103",
+      "tenant": "Bob Johnson",
+      "contact": "5556677889",
+      "checkin": "24-Feb-2025",
+      "checkout": "26-Feb-2025",
+      "price": 180
+    }
+  ]
+  
